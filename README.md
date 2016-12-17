@@ -6,7 +6,6 @@
 
 
 
-
-	![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")
+![image](https://j.gifs.com/qjLNQG.gif)
 
 
