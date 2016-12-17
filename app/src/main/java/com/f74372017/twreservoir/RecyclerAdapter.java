@@ -67,7 +67,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         for(int j=0;j<MainActivity.Name.size();j++){
             if(list.get(i).equals(MainActivity.Name.get(j))){
                 DecimalFormat df=new DecimalFormat("0.0");
-                viewHolder.mWaveLoadingView.setCenterTitle(df.format(Double.parseDouble(MainActivity.percentage.get(i))));
+                viewHolder.mWaveLoadingView.setCenterTitle(df.format(Double.parseDouble(MainActivity.percentage.get(j))));
+                viewHolder.mWaveLoadingView.setProgressValue((int)Double.parseDouble(MainActivity.percentage.get(j)));
                 viewHolder.tvName.setText(MainActivity.Name.get(j));
                 viewHolder.tvWater.setText("有效蓄水量:"+MainActivity.Water.get(j)+"萬立方公頃");
                 viewHolder.tvDay.setText("預測剩餘天數:"+"60天以上");
