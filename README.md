@@ -7,7 +7,6 @@
 
 
 
+	![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")
 
 
-Demo
-https://j.gifs.com/qjLNQG.gif
