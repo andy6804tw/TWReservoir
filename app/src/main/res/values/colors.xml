@@ -6,4 +6,6 @@
     <color name="tvName">#a74731</color>
     <color name="tvText">#00093e</color>
     <color name="MyRed">#ff9c9d</color>
+    <color name="borderColor">#9e009ee7</color>
+    <color name="borderColor_2">#feb70009</color>
 </resources>
