@@ -4,7 +4,6 @@ package com.f74372017.twreservoir;
  * Created by andy6804tw on 2016/12/12.
  */
 
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +17,9 @@ import me.itangqi.waveloadingview.WaveLoadingView;
 
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    ArrayList<String>list;
+    ArrayList<DataModel>list;
 
-    public RecyclerAdapter(ArrayList<String>list){
+    public RecyclerAdapter(ArrayList<DataModel>list){
         this.list=list;
     }
 
@@ -44,9 +43,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 @Override public void onClick(View v) {
                     int position = getAdapterPosition();
 
-                    Snackbar.make(v, "Click detected on item " + position,
+                   /* Snackbar.make(v, "Click detected on item " + position,
                             Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                            .setAction("Action", null).show();*/
 
                 }
             });
@@ -64,17 +63,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder,int i) {
-        for(int j=0;j<MainActivity.Name.size();j++){
-            if(list.get(i).equals(MainActivity.Name.get(j))){
                 DecimalFormat df=new DecimalFormat("0.0");
-                viewHolder.mWaveLoadingView.setCenterTitle(df.format(Double.parseDouble(MainActivity.percentage.get(j))));
-                viewHolder.mWaveLoadingView.setProgressValue((int)Double.parseDouble(MainActivity.percentage.get(j)));
-                viewHolder.tvName.setText(MainActivity.Name.get(j));
-                viewHolder.tvWater.setText("有效蓄水量:"+MainActivity.Water.get(j)+"萬立方公頃");
+                viewHolder.mWaveLoadingView.setCenterTitle(df.format(Double.parseDouble(list.get(i).getPercentage())));
+                viewHolder.mWaveLoadingView.setProgressValue((int)Double.parseDouble(list.get(i).getPercentage()));
+                viewHolder.tvName.setText(list.get(i).getName());
+                viewHolder.tvWater.setText("有效蓄水量:"+list.get(i).getWater()+"萬立方公頃");
                 viewHolder.tvDay.setText("預測剩餘天數:"+"60天以上");
-                viewHolder.tvUpdate.setText("最後更新日期:"+MainActivity.Update.get(j));
-                viewHolder.tvDown.setText("今日進水量:"+MainActivity.Down.get(j));
-                if(Float.parseFloat(MainActivity.percentage.get(j))<20) {
+                viewHolder.tvUpdate.setText("最後更新日期:"+list.get(i).getUpdate());
+                viewHolder.tvDown.setText("今日進水量:"+list.get(i).getDown());
+                if(Float.parseFloat(list.get(i).getPercentage())<20) {
                     viewHolder.tvDay.setText("預測剩餘天數:"+"10天左右");
                     viewHolder.tvDay.setTextColor(0Xfeb70009);
                     viewHolder.tvWater.setTextColor(0Xfeb70009);
@@ -84,9 +81,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                    viewHolder.mWaveLoadingView.setBorderColor(0x9eff3b76);
 
                 }
-            }
-        }
-
     }
 
     @Override

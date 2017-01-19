@@ -1,5 +1,6 @@
 package com.f74372017.twreservoir;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -27,13 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
-
-    public static ArrayList<String> Water;
-    public static ArrayList<String> Day;
-    public static ArrayList<String>Update;
-    public static ArrayList<String>Down;
-    public static ArrayList<String>Name;
-    public static ArrayList<String>percentage;
+    public static ArrayList<DataModel>list;
+    DBAccess access;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar=(Toolbar)findViewById(R.id.app_bar);
-        toolbar.setTitle("台灣水庫及時水情");
+        toolbar.setTitle("台灣水庫即時水情");
         setSupportActionBar(toolbar);
 
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
@@ -52,16 +48,13 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragments(new SouthFragment(),"南部");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
-
-
-        Water=new ArrayList<>();
-        Day=new ArrayList<>();
-        Update=new ArrayList<>();
-        Down=new ArrayList<>();
-        Name=new ArrayList<>();
-        percentage=new ArrayList<>();
-
+        access=new DBAccess(this,"Water",null,1);
+        list=new ArrayList<>();
+        //access.add("Title","日期","時間");
+        Cursor c=access.getData(null,null);
+        c.moveToFirst();
+//        Toast.makeText(this,c.getCount()+" "+c.getString(3),Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,c.getString(0)+" "+c.getString(1)+" "+c.getString(2)+" "+c.getCount(),Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -70,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="http://chihsuan.github.io/data/data.json";
 
-// Request a string response from the provided URL.
+        // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -84,14 +77,50 @@ public class MainActivity extends AppCompatActivity {
                             Log.e("Data2",df.format(Double.parseDouble(jsonObject.getJSONObject("翡翠水庫").getString("percentage"))));
                             String name[]={"新山水庫","翡翠水庫","石門水庫","永和山水庫","寶山水庫","寶山第二水庫","明德水庫","鯉魚潭水庫","明德水庫","鯉魚潭水庫","德基水庫"
                                     ,"石岡壩","日月潭水庫","霧社水庫","仁義潭水庫","蘭潭水庫","白河水庫","曾文水庫","烏山頭水庫","南化水庫","阿公店水庫","牡丹水庫"};
-                            for(int i=0;i<name.length;i++){
-                                Water.add(jsonObject.getJSONObject(name[i]).getString("volumn"));
-                                Day.add(jsonObject.getJSONObject(name[i]).getString("percentage"));
-                                Update.add(jsonObject.getJSONObject(name[i]).getString("updateAt"));
-                                Down.add(jsonObject.getJSONObject(name[i]).getString("daliyInflow"));
-                                Name.add(jsonObject.getJSONObject(name[i]).getString("name"));
-                                percentage.add(jsonObject.getJSONObject(name[i]).getString("percentage"));
+                            Cursor c=access.getData(null,null);
+                            if(c.getCount()==0){
+                                for(int i=0;i<name.length;i++){
+                                    String water=jsonObject.getJSONObject(name[i]).getString("volumn");
+                                    String day=jsonObject.getJSONObject(name[i]).getString("percentage");
+                                    String update=jsonObject.getJSONObject(name[i]).getString("updateAt");
+                                    String down=jsonObject.getJSONObject(name[i]).getString("daliyInflow");
+                                    String c_name=jsonObject.getJSONObject(name[i]).getString("name");
+                                    String perctange=jsonObject.getJSONObject(name[i]).getString("percentage");
+                                    String position;
+                                    if(c_name.equals("新山水庫")||c_name.equals("新山水庫")||c_name.equals("翡翠水庫")||c_name.equals("石門水庫")||c_name.equals("永和山水庫")||
+                                            c_name.equals("寶山水庫")||c_name.equals("寶山第二水庫")||c_name.equals("明德水庫")||c_name.equals("鯉魚潭水庫"))
+                                        position="北部";
+                                    else if(c_name.equals("鯉魚潭水庫")||c_name.equals("德基水庫")||c_name.equals("石岡壩")||c_name.equals("日月潭水庫")||c_name.equals("霧社水庫")||
+                                            c_name.equals("仁義潭水庫")||c_name.equals("蘭潭水庫"))
+                                        position="中部";
+                                    else
+                                        position="南部";
 
+                                    access.add(water,day,update,down,c_name,perctange,position);
+                                }
+                            }else{
+                                Cursor c2=access.getData(null,null);
+                                c2.moveToFirst();
+                                if(!jsonObject.getJSONObject(name[0]).getString("updateAt").equals(c2.getString(3))) {
+                                    for (int i = 0; i < name.length; i++) {
+                                        String water = jsonObject.getJSONObject(name[i]).getString("volumn");
+                                        String day = jsonObject.getJSONObject(name[i]).getString("percentage");
+                                        String update = jsonObject.getJSONObject(name[i]).getString("updateAt");
+                                        String down = jsonObject.getJSONObject(name[i]).getString("daliyInflow");
+                                        String c_name = jsonObject.getJSONObject(name[i]).getString("name");
+                                        String perctange = jsonObject.getJSONObject(name[i]).getString("percentage");
+                                        String position;
+                                        if (c_name.equals("新山水庫") || c_name.equals("新山水庫") || c_name.equals("翡翠水庫") || c_name.equals("石門水庫") || c_name.equals("永和山水庫") ||
+                                                c_name.equals("寶山水庫") || c_name.equals("寶山第二水庫") || c_name.equals("明德水庫") || c_name.equals("鯉魚潭水庫"))
+                                            position = "北部";
+                                        else if (c_name.equals("鯉魚潭水庫") || c_name.equals("德基水庫") || c_name.equals("石岡壩") || c_name.equals("日月潭水庫") || c_name.equals("霧社水庫") ||
+                                                c_name.equals("仁義潭水庫") || c_name.equals("蘭潭水庫"))
+                                            position = "中部";
+                                        else
+                                            position = "南部";
+                                        access.update(water,day,update,down,c_name,perctange,position,DBAccess.ID_FIELD+" ="+i+1);
+                                    }
+                                }
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -103,10 +132,15 @@ public class MainActivity extends AppCompatActivity {
                 //mTextView.setText("That didn't work!");
             }
         });
-// Add the request to the RequestQueue.
+        // Add the request to the RequestQueue.
         queue.add(stringRequest);
 
         super.onResume();
+    }
+    @Override
+    protected void onDestroy() {
+        access.close();
+        super.onDestroy();
     }
 
     /*private Runnable mutiThread =new Runnable(){

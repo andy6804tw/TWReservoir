@@ -1,22 +1,16 @@
 package com.f74372017.twreservoir;
 
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 
@@ -42,14 +36,15 @@ public class SouthFragment extends Fragment {
         recyclerView =(RecyclerView)view. findViewById(R.id.recycler_view);
 
         layoutManager = new LinearLayoutManager(this.getActivity());
+        DBAccess access=new DBAccess(getActivity(),"Water",null,1);
         recyclerView.setLayoutManager(layoutManager);
-        ArrayList<String>list=new ArrayList<>();
-        list.add("白河水庫");
-        list.add("曾文水庫");
-        list.add("烏山頭水庫");
-        list.add("南化水庫");
-        list.add("阿公店水庫");
-        list.add("牡丹水庫");
+        ArrayList<DataModel> list=new ArrayList<>();
+        Cursor c=access.getData(DBAccess.POSITION_FIELD+" ='南部'",null);
+        c.moveToFirst();
+        for(int i=0;i<c.getCount();i++){
+            list.add(new DataModel(c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7)));
+            c.moveToNext();
+        }
         adapter = new RecyclerAdapter(list);
         recyclerView.setAdapter(adapter);
         return view;
