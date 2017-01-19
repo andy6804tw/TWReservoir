@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -88,7 +89,16 @@ public class SplashActivity extends AppCompatActivity {
                             }else{
                                 Cursor c2=access.getData(null,null);
                                 c2.moveToFirst();
-                                if(!jsonObject.getJSONObject(name[0]).getString("updateAt").equals(c2.getString(3))) {
+                                boolean b=false;
+                                for(int i=0;i<c2.getCount();i++){
+                                    if(!jsonObject.getJSONObject(name[i]).getString("updateAt").equals(c2.getString(3))){
+                                        b=true;
+                                        Toast.makeText(SplashActivity.this,"進入2"+c2.getString(5)+" "+c2.getString(3)+" "+jsonObject.getJSONObject(name[i]).getString("updateAt"),Toast.LENGTH_LONG).show();
+                                        break;
+                                    }
+                                    c2.moveToNext();
+                                }
+                                if(b) {
                                     for (int i = 0; i < name.length; i++) {
                                         String water = jsonObject.getJSONObject(name[i]).getString("volumn");
                                         String day = jsonObject.getJSONObject(name[i]).getString("percentage");
@@ -105,7 +115,7 @@ public class SplashActivity extends AppCompatActivity {
                                             position = "中部";
                                         else
                                             position = "南部";
-                                        access.update(water,day,update,down,c_name,perctange,position,DBAccess.ID_FIELD+" ="+i+1);
+                                        access.update(water,day,update,down,c_name,perctange,position,DBAccess.ID_FIELD+" ="+(i+1));
                                     }
                                 }
                             }
