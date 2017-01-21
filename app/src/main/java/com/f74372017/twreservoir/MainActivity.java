@@ -1,10 +1,12 @@
 package com.f74372017.twreservoir;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 
 import java.util.ArrayList;
 
@@ -43,7 +45,23 @@ public class MainActivity extends AppCompatActivity {
         // Toast.makeText(this,c.getCount()+" "+c.getString(3),Toast.LENGTH_LONG).show();
         //Toast.makeText(this,c.getString(0)+" "+c.getString(1)+" "+c.getString(2)+" "+c.getCount(),Toast.LENGTH_LONG).show();
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
 
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            // Show home screen when pressing "back" button,
+            //  so that this app won't be closed accidentally
+            Intent intentHome = new Intent(Intent.ACTION_MAIN);
+            intentHome.addCategory(Intent.CATEGORY_HOME);
+            intentHome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intentHome);
+
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
 
 
     /*private Runnable mutiThread =new Runnable(){
