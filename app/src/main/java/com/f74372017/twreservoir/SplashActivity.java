@@ -95,7 +95,7 @@ public class SplashActivity extends AppCompatActivity {
                             Log.e("Data",jsonObject.toString());
                             DecimalFormat df=new DecimalFormat("0.00");
                             Log.e("Data2",df.format(Double.parseDouble(jsonObject.getJSONObject("翡翠水庫").getString("percentage"))));
-                            String name[]={"新山水庫","翡翠水庫","石門水庫","永和山水庫","寶山水庫","寶山第二水庫","明德水庫","鯉魚潭水庫","明德水庫","鯉魚潭水庫","德基水庫"
+                            String name[]={"新山水庫","翡翠水庫","石門水庫","永和山水庫","寶山水庫","寶山第二水庫","明德水庫","鯉魚潭水庫","德基水庫"
                                     ,"石岡壩","日月潭水庫","霧社水庫","仁義潭水庫","蘭潭水庫","白河水庫","曾文水庫","烏山頭水庫","南化水庫","阿公店水庫","牡丹水庫"};
                             Cursor c=access.getData(null,null);
                             //Toast.makeText(SplashActivity.this,"1",Toast.LENGTH_SHORT).show();
