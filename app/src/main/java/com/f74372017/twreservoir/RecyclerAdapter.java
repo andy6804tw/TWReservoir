@@ -55,7 +55,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.test, viewGroup, false);
+                .inflate(R.layout.card_layout, viewGroup, false);
                 ViewHolder viewHolder = new ViewHolder(v);
                 return viewHolder;
 

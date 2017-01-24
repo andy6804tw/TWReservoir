@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -92,9 +91,9 @@ public class SplashActivity extends AppCompatActivity {
                         //mTextView.setText("Response is: "+ response.substring(0,500));
                         try {
                             JSONObject jsonObject =new JSONObject(response);
-                            Log.e("Data",jsonObject.toString());
+                            //Log.e("Data",jsonObject.toString());
                             DecimalFormat df=new DecimalFormat("0.00");
-                            Log.e("Data2",df.format(Double.parseDouble(jsonObject.getJSONObject("翡翠水庫").getString("percentage"))));
+                            //Log.e("Data2",df.format(Double.parseDouble(jsonObject.getJSONObject("翡翠水庫").getString("percentage"))));
                             String name[]={"新山水庫","翡翠水庫","石門水庫","永和山水庫","寶山水庫","寶山第二水庫","明德水庫","鯉魚潭水庫","德基水庫"
                                     ,"石岡壩","日月潭水庫","霧社水庫","仁義潭水庫","蘭潭水庫","白河水庫","曾文水庫","烏山頭水庫","南化水庫","阿公店水庫","牡丹水庫"};
                             Cursor c=access.getData(null,null);
