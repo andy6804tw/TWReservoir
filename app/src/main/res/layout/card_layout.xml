@@ -57,7 +57,7 @@
                 android:paddingTop="5dp" />
 
             <TextView
-                android:text="有效蓄水量:900.00萬立方公頃"
+                android:text="有效蓄水量:900.00立方公頃"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvWater"

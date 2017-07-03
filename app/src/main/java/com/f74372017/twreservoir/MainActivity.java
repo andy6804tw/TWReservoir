@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,12 +19,13 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
     public static ArrayList<DataModel>list;
-
+    private long temptime = 0;//計算退出秒數
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ExitApplication.getInstance().addActivity(this);
 
         toolbar=(Toolbar)findViewById(R.id.app_bar);
         toolbar.setTitle("台灣水庫即時水情");
@@ -46,23 +48,30 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this,c.getString(0)+" "+c.getString(1)+" "+c.getString(2)+" "+c.getCount(),Toast.LENGTH_LONG).show();
     }
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if (keyCode == KeyEvent.KEYCODE_BACK)
-        {
-            // Show home screen when pressing "back" button,
-            //  so that this app won't be closed accidentally
-            Intent intentHome = new Intent(Intent.ACTION_MAIN);
-            intentHome.addCategory(Intent.CATEGORY_HOME);
-            intentHome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intentHome);
-
+    public boolean onKeyDown(int keyCode, KeyEvent event)//手機按鈕事件
+    {
+        // TODO Auto-generated method stub
+        if (1 == getSupportFragmentManager().getBackStackEntryCount()) {
+            getSupportFragmentManager().popBackStack();
             return true;
-        }
+        }else{
+            if((keyCode == KeyEvent.KEYCODE_BACK)&&(event.getAction() == KeyEvent.ACTION_DOWN))
+            {
+                if(System.currentTimeMillis() - temptime >2000) // 2s內再次選擇back有效
+                {
+                    Toast.makeText(this, "再按一次離開", Toast.LENGTH_LONG).show();
+                    temptime = System.currentTimeMillis();
+                }
+                else {
+                    ExitApplication.getInstance().exit();
+                }
 
+                return true;
+
+            }
+        }
         return super.onKeyDown(keyCode, event);
     }
-
 
     /*private Runnable mutiThread =new Runnable(){
         public void run(){

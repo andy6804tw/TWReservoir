@@ -67,7 +67,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 viewHolder.mWaveLoadingView.setCenterTitle(df.format(Double.parseDouble(list.get(i).getPercentage())));
                 viewHolder.mWaveLoadingView.setProgressValue((int)Double.parseDouble(list.get(i).getPercentage()));
                 viewHolder.tvName.setText(list.get(i).getName());
-                viewHolder.tvWater.setText("有效蓄水量:"+list.get(i).getWater()+"萬立方公頃");
+                viewHolder.tvWater.setText("有效蓄水量:"+list.get(i).getWater()+"立方公頃");
                 viewHolder.tvDay.setText("預測剩餘天數:"+"60天以上");
                 viewHolder.tvUpdate.setText("最後更新日期:"+list.get(i).getUpdate());
                 viewHolder.tvDown.setText("今日進水量:"+list.get(i).getDown());

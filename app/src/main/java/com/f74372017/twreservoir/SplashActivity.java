@@ -33,6 +33,8 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        ExitApplication.getInstance().addActivity(this);
+
         final WaveProgressView waveProgressbar=(WaveProgressView)findViewById(R.id.waveProgressbar);
          Handler handler = new Handler() {
             @Override
@@ -108,9 +110,9 @@ public class SplashActivity extends AppCompatActivity {
                                     String perctange=jsonObject.getJSONObject(name[i]).getString("percentage");
                                     String position;
                                     if(c_name.equals("新山水庫")||c_name.equals("新山水庫")||c_name.equals("翡翠水庫")||c_name.equals("石門水庫")||c_name.equals("永和山水庫")||
-                                            c_name.equals("寶山水庫")||c_name.equals("寶山第二水庫")||c_name.equals("明德水庫")||c_name.equals("鯉魚潭水庫"))
+                                            c_name.equals("寶山水庫")||c_name.equals("寶山第二水庫"))
                                         position="北部";
-                                    else if(c_name.equals("鯉魚潭水庫")||c_name.equals("德基水庫")||c_name.equals("石岡壩")||c_name.equals("日月潭水庫")||c_name.equals("霧社水庫")||
+                                    else if(c_name.equals("明德水庫")||c_name.equals("鯉魚潭水庫")||c_name.equals("德基水庫")||c_name.equals("石岡壩")||c_name.equals("日月潭水庫")||c_name.equals("霧社水庫")||
                                             c_name.equals("仁義潭水庫")||c_name.equals("蘭潭水庫"))
                                         position="中部";
                                     else
@@ -140,9 +142,9 @@ public class SplashActivity extends AppCompatActivity {
                                         String perctange = jsonObject.getJSONObject(name[i]).getString("percentage");
                                         String position;
                                         if (c_name.equals("新山水庫") || c_name.equals("新山水庫") || c_name.equals("翡翠水庫") || c_name.equals("石門水庫") || c_name.equals("永和山水庫") ||
-                                                c_name.equals("寶山水庫") || c_name.equals("寶山第二水庫") || c_name.equals("明德水庫") || c_name.equals("鯉魚潭水庫"))
+                                                c_name.equals("寶山水庫") || c_name.equals("寶山第二水庫"))
                                             position = "北部";
-                                        else if (c_name.equals("鯉魚潭水庫") || c_name.equals("德基水庫") || c_name.equals("石岡壩") || c_name.equals("日月潭水庫") || c_name.equals("霧社水庫") ||
+                                        else if ( c_name.equals("明德水庫") || c_name.equals("鯉魚潭水庫")|| c_name.equals("德基水庫") || c_name.equals("石岡壩") || c_name.equals("日月潭水庫") || c_name.equals("霧社水庫") ||
                                                 c_name.equals("仁義潭水庫") || c_name.equals("蘭潭水庫"))
                                             position = "中部";
                                         else
