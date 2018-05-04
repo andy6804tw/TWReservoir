@@ -82,8 +82,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://chihsuan.github.io/data/data.json";
-
+        String url ="https://www.taiwanstat.com/waters/latest";
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -92,7 +91,7 @@ public class SplashActivity extends AppCompatActivity {
                         // Display the first 500 characters of the response string.
                         //mTextView.setText("Response is: "+ response.substring(0,500));
                         try {
-                            JSONObject jsonObject =new JSONObject(response);
+                            JSONObject jsonObject =new JSONObject(response.substring(1,response.length()-1));
                             //Log.e("Data",jsonObject.toString());
                             DecimalFormat df=new DecimalFormat("0.00");
                             //Log.e("Data2",df.format(Double.parseDouble(jsonObject.getJSONObject("翡翠水庫").getString("percentage"))));
