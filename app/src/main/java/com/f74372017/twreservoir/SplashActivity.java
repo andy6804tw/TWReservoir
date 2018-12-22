@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -82,6 +83,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
+        SsX509TrustManager.allowAllSSL();
         String url ="https://www.taiwanstat.com/waters/latest";
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -92,7 +94,7 @@ public class SplashActivity extends AppCompatActivity {
                         //mTextView.setText("Response is: "+ response.substring(0,500));
                         try {
                             JSONObject jsonObject =new JSONObject(response.substring(1,response.length()-1));
-                            //Log.e("Data",jsonObject.toString());
+                            Log.e("Data",jsonObject.toString());
                             DecimalFormat df=new DecimalFormat("0.00");
                             //Log.e("Data2",df.format(Double.parseDouble(jsonObject.getJSONObject("翡翠水庫").getString("percentage"))));
                             String name[]={"新山水庫","翡翠水庫","石門水庫","永和山水庫","寶山水庫","寶山第二水庫","明德水庫","鯉魚潭水庫","德基水庫"
@@ -153,20 +155,27 @@ public class SplashActivity extends AppCompatActivity {
                                 }
                             }
                         } catch (JSONException e) {
+
                             e.printStackTrace();
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Log.e("sac",error.toString());
                 //mTextView.setText("That didn't work!");
             }
         });
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
-
         super.onResume();
     }
+    public void getMetroInfo(){
+
+
+    }
+
+
     @Override
     protected void onDestroy() {
         access.close();
