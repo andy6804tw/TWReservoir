@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.1.0_3d0dabdd964af8cebb9c5a17311510316abaaaaa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-26.1.0_10b62d16ddca4373dc4ed0484c10cd81a2fd319f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.1.0_a2b9469f06e919c25be7740b677eb016c47186f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.1.0_4e67148483f8b12f22dd52ba3cba306a84906118.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.volley-volley-1.0.0_ccdb2c2850628aaa1cb18ba060750173289822cb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/cn.fanrunqi/waveprogress/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="cb6562c391fa168727b187347823f771c53d1ad9">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/cn.fanrunqi-waveprogress-1.0.1_4a2f59d94470b2c68d0f04f240965fd6bc70a374.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-26.1.0_fc1b79ddeb6a5cdd74ad9d47f15f33edc2c1eaef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/android.arch.lifecycle/runtime/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/android.arch.lifecycle-runtime-1.0.0_25a46283d1096d5ec7042fc1e359b56941f095d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.1.0_ac01adc0a92de87eb2f016f79e6666edcbaad532.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/me.itangqi.waveloadingview/library/0.3.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="73330c12b1b299c298e047887a8a4f2ad41f674b">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/me.itangqi.waveloadingview-library-0.3.2_0d85a3b3c98703a22a6ddb3d6bf6c0b6eb5b7c08.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b12cd9c87c3dfb012a911b6e38d2444ed0a65e1f">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-26.1.0_4c73b77062e0493e4dc4133f791f136b5a78cac0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-26.1.0_62370bc35a3c9bb0fa3b88ae37f0e03408341262.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/design/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a37fc31c5ceeaa4532a37358add1b189d8db4af1">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-design-26.1.0_2aa5b403e109327fc57a37c36b945f25907e18d9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.0.0/e414a4cb28434e25c4f6aa71426eb20cf4874ae9/common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/common-1.0.0_cd8a3f7b7f31ecea007c105da84b66696e67471a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-26.1.0_1c13aa8f89b1735048c79ff3151c548c5d95a91e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/transition/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="58b12bdb21a84f22e0dc3b047aeceb0a546b1b44">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-transition-26.1.0_e1d3051b3dcb81602d8139ef4b416db4e551446d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.0.0/a2d487452376193fc8c103dd2b9bd5f2b1b44563/common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/common-1.0.0_ed59a72e4285aee4b9dfde1322005703a6f67ac3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-26.1.0_c8f1941ae9e11769f1b94f260950548b9bdeab63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/26.1.0/814258103cf26a15fcc26ecce35f5b7d24b73f8/support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/support-annotations-26.1.0_4a2ede9b36eb7bb0b5b5e9c20a90ea97aa115800.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/26.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b4d6fbbb48b42dd03fd9c5a09b3b7a53266df6ed">
+        <dex dex="/Users/yilintsai/Desktop/GitHub/my-github/TWReservoir/backup/app-20200731/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-26.1.0_7ab455f56bfd4cba7d1c148d7730fb874ff611c0.jar" />
+    </item>
+
+</items>
